@@ -1,0 +1,37 @@
+#include<stdio.h>/*包含头文件*/
+void Bubble(int , int );/*引用函数声明*/
+int main()
+{
+	int i, k, M;/*定义整型变量*/
+	printf("请输入数组长度");
+	scanf_s("%d", &M);/*输入数字个数*/
+	int a[100];/*定义足够大的数组*/
+
+	printf("请输入十个数：");
+	for (i = 0; i < M; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	/*读入用户输入的十个数，遍历数组，*/
+	for (k = 0; k < M; k++)
+	{
+		printf("%d\t", a[k]);
+	}
+	return 0;
+}/*利用for循环将排序后的数字输出*/
+
+void Bubble(int a[], int N)/*函数申明*/
+{   int temp,n,m;/*定义冒泡排序所需的整型变量*/
+    for(m=0;m<N-1;m++)/*进行N-1轮排序*/
+	{
+		for (n = 0; n < N - m - 1; n++)/*对未排序好的N-m个数进行N-m-1次调序*/
+		{
+			if (a[n] > a[n + 1])
+			{
+				temp = a[n];
+				a[n] = a[n + 1];
+				a[n + 1] = temp;
+			}/*若前一个数比后一个数大，则交换顺序，即让较大的数冒泡上去*/
+		}
+	}
+}
